@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 /** Current site theme ("light" | "dark"), kept in sync with <html data-theme>. */
 export function useTheme(): "light" | "dark" {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
 
   useEffect(() => {
     const root = document.documentElement;

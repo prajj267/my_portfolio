@@ -1,6 +1,6 @@
 /* ── THEME TOKENS ───────────────────────────
+   Dark  = black + white (the default; set on <html data-theme="dark">).
    Light = "floodlit pitch": cool blue-grey turf with mowing stripes, white surfaces.
-   Dark  = black + white.
    Every color in the stylesheet comes from here. */
 :root {
   color-scheme: light;
