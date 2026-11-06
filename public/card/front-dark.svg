@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="630" height="880" viewBox="0 0 630 880">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#3d3d3d"/>
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.36" r="0.55">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="stripes" width="70" height="880" patternUnits="userSpaceOnUse">
+      <rect width="35" height="880" fill="#ffffff" fill-opacity="0.035"/>
+    </pattern>
+  </defs>
+  <rect width="630" height="880" rx="34" fill="url(#bg)"/>
+  <rect width="630" height="880" rx="34" fill="url(#stripes)"/>
+  <rect width="630" height="880" rx="34" fill="url(#glow)"/>
+  <rect x="22" y="22" width="586" height="836" rx="22" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="3"/>
+
+  <text x="58" y="150" font-family="Impact, 'Haettenschweiler', 'Arial Narrow Bold', 'Oswald', sans-serif" font-size="128" fill="#ffffff">24</text>
+  <text x="62" y="192" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="22" letter-spacing="4" fill="rgba(255,255,255,0.6)">FS · RS</text>
+  <g transform="translate(512 58) scale(1)">
+    <path d="M0 0h60v38L30 64 0 38z" fill="#ffffff"/>
+    <text x="30" y="36" text-anchor="middle" font-family="Impact, 'Haettenschweiler', 'Arial Narrow Bold', 'Oswald', sans-serif" font-size="26" fill="#000000">PP</text>
+  </g>
+  <text x="542" y="160" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="16" letter-spacing="3" fill="rgba(255,255,255,0.6)">KIIT</text>
+
+  <!-- silhouette -->
+  <g fill="rgba(255,255,255,0.12)">
+    <circle cx="315" cy="330" r="92"/>
+    <path d="M110 640 C 125 470, 225 440, 315 440 C 405 440, 505 470, 520 640 Z"/>
+  </g>
+  <text x="315" y="400" text-anchor="middle" font-family="Impact, 'Haettenschweiler', 'Arial Narrow Bold', 'Oswald', sans-serif" font-size="150" fill="#ffffff" fill-opacity="0.9">PP</text>
+
+  <!-- name band -->
+  <rect x="22" y="600" width="586" height="258" fill="rgba(0,0,0,0.6)"/>
+  <text x="315" y="648" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="24" letter-spacing="10" fill="#d4d4d4">PRAJJWAL</text>
+  <text x="315" y="740" text-anchor="middle" font-family="Impact, 'Haettenschweiler', 'Arial Narrow Bold', 'Oswald', sans-serif" font-size="104" letter-spacing="4" fill="#ffffff">PATEL</text>
+  <line x1="60" y1="762" x2="570" y2="762" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+  <g transform="translate(123.75 0)">
+    <text y="808" text-anchor="middle" font-family="Impact, 'Haettenschweiler', 'Arial Narrow Bold', 'Oswald', sans-serif" font-size="40" fill="#ffffff">8.48</text>
+    <text y="834" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="14" letter-spacing="2" fill="rgba(255,255,255,0.6)">CGPA</text>
+  </g>
+  <g transform="translate(251.25 0)">
+    <text y="808" text-anchor="middle" font-family="Impact, 'Haettenschweiler', 'Arial Narrow Bold', 'Oswald', sans-serif" font-size="40" fill="#ffffff">3</text>
+    <text y="834" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="14" letter-spacing="2" fill="rgba(255,255,255,0.6)">PAPERS</text>
+  </g>
+  <g transform="translate(378.75 0)">
+    <text y="808" text-anchor="middle" font-family="Impact, 'Haettenschweiler', 'Arial Narrow Bold', 'Oswald', sans-serif" font-size="40" fill="#ffffff">1</text>
+    <text y="834" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="14" letter-spacing="2" fill="rgba(255,255,255,0.6)">TITLE</text>
+  </g>
+  <g transform="translate(506.25 0)">
+    <text y="808" text-anchor="middle" font-family="Impact, 'Haettenschweiler', 'Arial Narrow Bold', 'Oswald', sans-serif" font-size="40" fill="#ffffff">2</text>
+    <text y="834" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="14" letter-spacing="2" fill="rgba(255,255,255,0.6)">SHIPPED</text>
+  </g>
+</svg>
