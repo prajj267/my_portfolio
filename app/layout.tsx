@@ -8,8 +8,10 @@ const body = Inter({ subsets: ["latin"], variable: "--font-body", display: "swap
 const description =
   "Prajjwal Patel: B.Tech CS student at KIIT, full stack developer (Next.js, TypeScript, PostgreSQL) and UAV swarm researcher with IIT Patna. Open to internships.";
 
-// Set NEXT_PUBLIC_SITE_URL to the live domain when deploying (used for share-image URLs).
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+// Base URL for share-image links. On Vercel the production domain is detected
+// automatically; NEXT_PUBLIC_SITE_URL overrides it (e.g. for a custom domain).
+const vercelHost = process.env.VERCEL_PROJECT_PRODUCTION_URL ?? process.env.VERCEL_URL;
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? (vercelHost ? `https://${vercelHost}` : "http://localhost:3000");
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
