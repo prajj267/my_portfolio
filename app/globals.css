@@ -348,7 +348,29 @@ ul, ol { margin: 0; padding: 0; }
 .report-notes { list-style: none; display: grid; gap: 10px; margin-top: 18px; }
 .report-notes li { position: relative; padding-left: 22px; font-size: 15.5px; line-height: 1.6; color: var(--body-text); max-width: 60ch; }
 .report-notes li::before { content: ""; position: absolute; left: 0; top: .82em; width: 12px; height: 2px; background: var(--muted); }
-.report-stack { margin: 18px 0 0; font-size: 15px; color: var(--muted); }
+.report-stack { margin: 14px 0 0; font-size: 15px; color: var(--muted); }
+
+/* "How it works": the system's flow as a chain of steps */
+.report-pipeline { margin-top: 22px; }
+.report-pipeline-title { display: block; font-size: 13px; font-weight: 600; color: var(--muted); margin-bottom: 8px; }
+.report-pipeline ol { list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 0; }
+.report-pipeline li {
+  display: inline-flex; align-items: center; font-size: 13.5px; font-weight: 600; color: var(--ink);
+  padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface);
+}
+.report-pipeline li:not(:last-child)::after {
+  content: ""; width: 14px; height: 2px; margin: 0 -26px 0 12px; background: var(--muted);
+  transform: translateX(0); position: relative; left: 0;
+}
+.report-pipeline li:not(:last-child) { margin-right: 26px; }
+
+/* hero: availability line */
+.hero-status {
+  display: flex; align-items: center; gap: 10px; margin: -8px 0 22px;
+  font-size: 15px; font-weight: 600; color: var(--ink);
+}
+.hero-status .live-dot { color: #1f9d55; }
+:root[data-theme="dark"] .hero-status .live-dot { color: #ffffff; }
 .report-link {
   display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; min-height: 44px;
   font-weight: 700; color: var(--accent); border-bottom: 2px solid currentColor;

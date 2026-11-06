@@ -5,7 +5,8 @@ export const profile = {
   position: "Full Stack Developer · Researcher",
   club: "KIIT, Bhubaneswar",
   homeGround: "Kakori, Uttar Pradesh, India",
-  bio: "B.Tech Computer Science student at KIIT. I ship production web apps end to end and do research on UAV swarm coordination with IIT Patna. Interested in AI/ML and full stack development, and I write poetry off the pitch.",
+  bio: "I build production software and research how autonomous drone swarms recover and coordinate. I've shipped a live store for a paying client and implemented UAV swarm algorithms at IIT Patna. B.Tech CS at KIIT, and a poet off the pitch.",
+  availability: "Open to internships in full stack engineering and AI/ML research",
   email: "pprajjwal2@gmail.com",
   phone: "+91 63064 24579",
   phoneHref: "tel:+916306424579",
@@ -35,7 +36,7 @@ export const career = [
     role: "Research & Full Stack Development Intern",
     period: "May 2025 – Jul 2025",
     place: "Patna, Bihar",
-    tag: "Loan spell",
+    tag: "Research stint",
     points: [
       "Designed, built and deployed the official lab website (HTML, CSS, JavaScript) on a PostgreSQL database powering members, projects, publications and news.",
       "Implemented and evaluated UAV swarm recovery algorithms alongside graduate researchers, contributing to 3 manuscripts in preparation.",
@@ -46,7 +47,7 @@ export const career = [
     role: "Web Developer",
     period: "Oct 2025 – Mar 2026",
     place: "Bhubaneswar, Odisha",
-    tag: "First team",
+    tag: "Squad member",
     points: [
       "Built a campus map feature and shipped student facility-access features in Node.js for KIIT's student platform.",
       "Led UI/UX improvements across the platform.",
@@ -76,6 +77,8 @@ export type Highlight = {
   visual: { kind: "image"; src: string; alt: string; url: string } | { kind: "braille"; text: string };
   summary: string;
   points: string[];
+  /** How a request/document flows through the system, in order. */
+  pipeline: string[];
 };
 
 export const highlights: Highlight[] = [
@@ -98,6 +101,7 @@ export const highlights: Highlight[] = [
       "Product catalogue on a PostgreSQL data layer with the Next.js App Router.",
       "SEO-optimised pages, deployed on Vercel with a custom domain.",
     ],
+    pipeline: ["Shopper visits florawish.in", "Next.js App Router pages", "PostgreSQL product catalogue", "Served from Vercel"],
   },
   {
     name: "BrailleWise",
@@ -113,6 +117,7 @@ export const highlights: Highlight[] = [
       "Built the web frontend and the FastAPI endpoints for uploads and queries, wired to a teammate's RAG backend.",
       "Arduino serial integration, so the Braille output physically moves the pins.",
     ],
+    pipeline: ["Document upload", "FastAPI endpoints", "RAG backend", "Braille binary output", "Arduino over serial", "Raised pins"],
   },
 ];
 
@@ -146,14 +151,15 @@ export const research = [
   },
 ];
 
+// Grouped by what each line does, so the football labels stay readable.
 export const formation = [
-  { line: "Attack", note: "Frameworks", players: ["React", "Next.js", "Node.js", "FastAPI"] },
-  { line: "Midfield", note: "Languages", players: ["TypeScript", "JavaScript", "Python", "C++", "C"] },
-  { line: "Defence", note: "Data", players: ["PostgreSQL", "SQL", "NumPy", "pandas"] },
-  { line: "Keeper", note: "Version control", players: ["Git"] },
+  { line: "Attack", note: "Frontend", players: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS"] },
+  { line: "Midfield", note: "Backend", players: ["Node.js", "FastAPI", "Python"] },
+  { line: "Defence", note: "Data", players: ["PostgreSQL", "SQL", "NumPy", "pandas", "Matplotlib"] },
+  { line: "Keeper", note: "Systems & hardware", players: ["C", "C++", "Arduino"] },
 ];
 
-export const bench = ["HTML", "CSS", "Matplotlib", "GitHub", "Vercel", "VS Code", "Arduino"];
+export const bench = ["Git", "GitHub", "Vercel", "VS Code"];
 
 export const captaincy = [
   { title: "Content Writing Lead", org: "NSS, KIIT", detail: "Apr 2026 – Present" },

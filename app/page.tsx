@@ -57,6 +57,10 @@ export default function Home() {
               </h1>
               <HeroBoard />
               <p className="hero-bio">{profile.bio}</p>
+              <p className="hero-status">
+                <span className="live-dot" aria-hidden="true" />
+                {profile.availability}
+              </p>
               <div className="hero-actions">
                 <a className="btn btn-primary" href={profile.resumeTech} target="_blank" rel="noopener">
                   Resume · Tech
@@ -165,6 +169,12 @@ export default function Home() {
                   <ul className="report-notes">
                     {h.points.map((p) => <li key={p}>{p}</li>)}
                   </ul>
+                  <div className="report-pipeline">
+                    <span className="report-pipeline-title">How it works</span>
+                    <ol>
+                      {h.pipeline.map((step) => <li key={step}>{step}</li>)}
+                    </ol>
+                  </div>
                   <p className="report-stack">
                     Built with {h.stack.slice(0, -1).join(", ")} and {h.stack[h.stack.length - 1]}
                   </p>
