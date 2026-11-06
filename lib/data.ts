@@ -30,18 +30,8 @@ export const stats = [
   { value: "2", label: "Products shipped" },
 ];
 
+// Oldest first; the page reverses it so the most recent role leads.
 export const career = [
-  {
-    club: "IIT Patna",
-    role: "Research & Full Stack Development Intern",
-    period: "May 2025 – Jul 2025",
-    place: "Patna, Bihar",
-    tag: "Research stint",
-    points: [
-      "Designed, built and deployed the official lab website (HTML, CSS, JavaScript) on a PostgreSQL database powering members, projects, publications and news.",
-      "Implemented and evaluated UAV swarm recovery algorithms alongside graduate researchers, contributing to 3 manuscripts in preparation.",
-    ],
-  },
   {
     club: "KIIT Saathi",
     role: "Web Developer",
@@ -51,6 +41,17 @@ export const career = [
     points: [
       "Built a campus map feature and shipped student facility-access features in Node.js for KIIT's student platform.",
       "Led UI/UX improvements across the platform.",
+    ],
+  },
+  {
+    club: "IIT Patna",
+    role: "Research & Full Stack Development Intern",
+    period: "May 2026 – Jul 2026",
+    place: "Patna, Bihar",
+    tag: "Research stint",
+    points: [
+      "Designed, built and deployed the official lab website (HTML, CSS, JavaScript) on a PostgreSQL database powering members, projects, publications and news.",
+      "Implemented and evaluated UAV swarm recovery algorithms alongside graduate researchers, contributing to 3 manuscripts in preparation.",
     ],
   },
   {
