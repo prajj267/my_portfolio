@@ -22,7 +22,7 @@ async function loadFont(family: string, text: string): Promise<ArrayBuffer | nul
 /** Link-preview image shown when the site is shared (LinkedIn, WhatsApp, X, Slack…). */
 export default async function OpengraphImage() {
   const tagline = "Full stack developer · UAV swarm researcher · KIIT × IIT Patna";
-  const stats = ["8.48 CGPA", "3 manuscripts", "ICDCIT hackathon winner"];
+  const stats = ["3 manuscripts", "ICDCIT hackathon winner", "2 products shipped"];
   const kicker = "SEASON 2026 · NO. 24";
   const [anton, inter] = await Promise.all([
     loadFont("Anton", "PRAJJWALTE24"),

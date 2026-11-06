@@ -51,19 +51,15 @@
   <text x="315" y="648" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="24" letter-spacing="10" fill="#d4d4d4">PRAJJWAL</text>
   <text x="315" y="740" text-anchor="middle" font-family="Impact, 'Haettenschweiler', 'Arial Narrow Bold', 'Oswald', sans-serif" font-size="104" letter-spacing="4" fill="#ffffff">PATEL</text>
   <line x1="60" y1="762" x2="570" y2="762" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
-  <g transform="translate(123.75 0)">
-    <text y="808" text-anchor="middle" font-family="Impact, 'Haettenschweiler', 'Arial Narrow Bold', 'Oswald', sans-serif" font-size="40" fill="#ffffff">8.48</text>
-    <text y="834" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="14" letter-spacing="2" fill="rgba(255,255,255,0.6)">CGPA</text>
-  </g>
-  <g transform="translate(251.25 0)">
+  <g transform="translate(145 0)">
     <text y="808" text-anchor="middle" font-family="Impact, 'Haettenschweiler', 'Arial Narrow Bold', 'Oswald', sans-serif" font-size="40" fill="#ffffff">3</text>
     <text y="834" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="14" letter-spacing="2" fill="rgba(255,255,255,0.6)">PAPERS</text>
   </g>
-  <g transform="translate(378.75 0)">
+  <g transform="translate(315 0)">
     <text y="808" text-anchor="middle" font-family="Impact, 'Haettenschweiler', 'Arial Narrow Bold', 'Oswald', sans-serif" font-size="40" fill="#ffffff">1</text>
     <text y="834" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="14" letter-spacing="2" fill="rgba(255,255,255,0.6)">TITLE</text>
   </g>
-  <g transform="translate(506.25 0)">
+  <g transform="translate(485 0)">
     <text y="808" text-anchor="middle" font-family="Impact, 'Haettenschweiler', 'Arial Narrow Bold', 'Oswald', sans-serif" font-size="40" fill="#ffffff">2</text>
     <text y="834" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="14" letter-spacing="2" fill="rgba(255,255,255,0.6)">SHIPPED</text>
   </g>

@@ -54,8 +54,8 @@ function crest(x, y, s, t) {
 }
 
 function front(t, img) {
-  const stats = [["8.48", "CGPA"], ["3", "PAPERS"], ["1", "TITLE"], ["2", "SHIPPED"]];
-  const colW = (W - 120) / 4;
+  const stats = [["3", "PAPERS"], ["1", "TITLE"], ["2", "SHIPPED"]];
+  const colW = (W - 120) / stats.length;
 
   // Photo layer (under the frame): full-bleed, with a shade top-left for the
   // number and a fade into the name band at the bottom.

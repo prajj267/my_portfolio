@@ -247,7 +247,7 @@ ul, ol { margin: 0; padding: 0; }
 
 /* ── SCOREBOARD ─────────────────────────── */
 .scoreboard {
-  display: grid; grid-template-columns: repeat(4, 1fr);
+  display: grid; grid-auto-flow: column; grid-auto-columns: 1fr;
   background: var(--deep); color: var(--on-deep);
 }
 .score { padding: 28px 16px; text-align: center; border-right: 1px solid color-mix(in srgb, var(--on-deep) 10%, transparent); }
@@ -637,9 +637,8 @@ ul, ol { margin: 0; padding: 0; }
   .marker { width: 34px; font-size: 17px; box-shadow: 0 0 0 4px rgba(255,255,255,.2); }
   .marker-label { font-size: 10.5px; padding: 2px 7px; top: calc(100% + 6px); letter-spacing: .06em; }
 
-  .scoreboard { grid-template-columns: repeat(2, 1fr); }
-  .score:nth-child(2) { border-right: 0; }
-  .score:nth-child(-n+2) { border-bottom: 1px solid color-mix(in srgb, var(--on-deep) 10%, transparent); }
+  .score { padding: 24px 8px; }
+  .score span { letter-spacing: .08em; }
   .contact-inner { grid-template-columns: 1fr; }
   .contact-photo { max-width: 240px; }
   .f-row { grid-template-columns: 1fr; gap: 10px; }

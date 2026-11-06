@@ -5,7 +5,7 @@ export const profile = {
   position: "Full Stack Developer · Researcher",
   club: "KIIT, Bhubaneswar",
   homeGround: "Kakori, Uttar Pradesh, India",
-  bio: "B.Tech Computer Science student at KIIT (CGPA 8.48). I ship production web apps end to end and do research on UAV swarm coordination with IIT Patna. Interested in AI/ML and full stack development, and I write poetry off the pitch.",
+  bio: "B.Tech Computer Science student at KIIT. I ship production web apps end to end and do research on UAV swarm coordination with IIT Patna. Interested in AI/ML and full stack development, and I write poetry off the pitch.",
   email: "pprajjwal2@gmail.com",
   phone: "+91 63064 24579",
   phoneHref: "tel:+916306424579",
@@ -24,7 +24,6 @@ export const navLinks = [
 ];
 
 export const stats = [
-  { value: "8.48", label: "CGPA" },
   { value: "3", label: "Manuscripts" },
   { value: "1", label: "Hackathon win" },
   { value: "2", label: "Products shipped" },
