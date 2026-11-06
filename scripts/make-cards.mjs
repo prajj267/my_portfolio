@@ -1,8 +1,15 @@
 // Generates the holo player-card artwork (front/back x light/dark) as SVG.
-import { writeFileSync } from "node:fs";
+// If public/photos/player.jpg (and player-bw.jpg for dark) exist, the photo is
+// embedded in the card front (SVGs used as images can't load external files).
+import { writeFileSync, readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 
 const out = process.argv[2];
+const photo = (file) => {
+  const p = join("public", "photos", file);
+  return existsSync(p) ? `data:image/jpeg;base64,${readFileSync(p).toString("base64")}` : null;
+};
+const photos = { light: photo("player.jpg"), dark: photo("player-bw.jpg") };
 const W = 630, H = 880;
 const DISPLAY = "Impact, 'Haettenschweiler', 'Arial Narrow Bold', 'Oswald', sans-serif";
 const BODY = "'Segoe UI', 'Helvetica Neue', Arial, sans-serif";
@@ -14,7 +21,7 @@ const themes = {
 
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
 
-function shell(t, body) {
+function shell(t, body, under = "") {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
@@ -32,6 +39,7 @@ function shell(t, body) {
   <rect width="${W}" height="${H}" rx="34" fill="url(#bg)"/>
   <rect width="${W}" height="${H}" rx="34" fill="url(#stripes)"/>
   <rect width="${W}" height="${H}" rx="34" fill="url(#glow)"/>
+${under}
   <rect x="22" y="22" width="${W - 44}" height="${H - 44}" rx="22" fill="none" stroke="${t.soft}" stroke-width="3"/>
 ${body}
 </svg>
@@ -45,24 +53,53 @@ function crest(x, y, s, t) {
   </g>`;
 }
 
-function front(t) {
+function front(t, img) {
   const stats = [["8.48", "CGPA"], ["3", "PAPERS"], ["1", "TITLE"], ["2", "SHIPPED"]];
   const colW = (W - 120) / 4;
+
+  // Photo layer (under the frame): full-bleed, with a shade top-left for the
+  // number and a fade into the name band at the bottom.
+  const under = img
+    ? `<defs>
+    <clipPath id="card"><rect width="${W}" height="${H}" rx="34"/></clipPath>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000" stop-opacity=".35"/>
+      <stop offset=".22" stop-color="#000" stop-opacity="0"/>
+      <stop offset=".55" stop-color="${t.b}" stop-opacity="0"/>
+      <stop offset=".72" stop-color="${t.b}" stop-opacity=".92"/>
+      <stop offset="1" stop-color="${t.b}" stop-opacity="1"/>
+    </linearGradient>
+    <radialGradient id="corner" cx="0" cy="0" r=".55">
+      <stop offset="0" stop-color="#000" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g clip-path="url(#card)">
+    <image href="${img}" x="0" y="0" width="${W}" height="${H}" preserveAspectRatio="xMidYMin slice"/>
+    <rect width="${W}" height="${H}" fill="url(#fade)"/>
+    <rect width="${W}" height="${H}" fill="url(#corner)"/>
+  </g>`
+    : "";
+
+  const placeholder = img
+    ? ""
+    : `<!-- silhouette (no photo yet) -->
+  <g fill="${t.faint}">
+    <circle cx="${W / 2}" cy="330" r="92"/>
+    <path d="M${W / 2 - 205} 640 C ${W / 2 - 190} 470, ${W / 2 - 90} 440, ${W / 2} 440 C ${W / 2 + 90} 440, ${W / 2 + 190} 470, ${W / 2 + 205} 640 Z"/>
+  </g>
+  <text x="${W / 2}" y="400" text-anchor="middle" font-family="${DISPLAY}" font-size="150" fill="${t.ink}" fill-opacity="0.9">PP</text>`;
+
   return shell(t, `
   <text x="58" y="150" font-family="${DISPLAY}" font-size="128" fill="${t.ink}">24</text>
   <text x="62" y="192" font-family="${BODY}" font-weight="700" font-size="22" letter-spacing="4" fill="${t.soft}">FS · RS</text>
   ${crest(W - 118, 58, 1.0, t)}
   <text x="${W - 88}" y="160" text-anchor="middle" font-family="${BODY}" font-weight="700" font-size="16" letter-spacing="3" fill="${t.soft}">KIIT</text>
 
-  <!-- silhouette -->
-  <g fill="${t.faint}">
-    <circle cx="${W / 2}" cy="330" r="92"/>
-    <path d="M${W / 2 - 205} 640 C ${W / 2 - 190} 470, ${W / 2 - 90} 440, ${W / 2} 440 C ${W / 2 + 90} 440, ${W / 2 + 190} 470, ${W / 2 + 205} 640 Z"/>
-  </g>
-  <text x="${W / 2}" y="400" text-anchor="middle" font-family="${DISPLAY}" font-size="150" fill="${t.ink}" fill-opacity="0.9">PP</text>
+  ${placeholder}
 
-  <!-- name band -->
-  <rect x="22" y="600" width="${W - 44}" height="258" fill="${t.band}"/>
+  <!-- name band (the photo fade already darkens this area) -->
+  ${img ? "" : `<rect x="22" y="600" width="${W - 44}" height="258" fill="${t.band}"/>`}
   <text x="${W / 2}" y="648" text-anchor="middle" font-family="${BODY}" font-weight="700" font-size="24" letter-spacing="10" fill="${t.accent}">PRAJJWAL</text>
   <text x="${W / 2}" y="740" text-anchor="middle" font-family="${DISPLAY}" font-size="104" letter-spacing="4" fill="${t.ink}">PATEL</text>
   <line x1="60" y1="762" x2="${W - 60}" y2="762" stroke="${t.soft}" stroke-width="2"/>
@@ -73,7 +110,7 @@ function front(t) {
     <text y="834" text-anchor="middle" font-family="${BODY}" font-weight="700" font-size="14" letter-spacing="2" fill="${t.soft}">${l}</text>
   </g>`
     )
-    .join("\n  ")}`);
+    .join("\n  ")}`, under);
 }
 
 function back(t) {
@@ -102,7 +139,7 @@ function back(t) {
 }
 
 for (const [name, t] of Object.entries(themes)) {
-  writeFileSync(join(out, `front-${name}.svg`), front(t));
+  writeFileSync(join(out, `front-${name}.svg`), front(t, photos[name]));
   writeFileSync(join(out, `back-${name}.svg`), back(t));
 }
 console.log("wrote 4 cards to", out);

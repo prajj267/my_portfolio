@@ -4,3 +4,6 @@ out
 *.tsbuildinfo
 next-env.d.ts
 .env*
+
+# original full-size photos (optimized copies live in public/photos)
+/photos-src/

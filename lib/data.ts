@@ -61,7 +61,7 @@ export const career = [
     tag: "Captain",
     points: [
       "Leads a team of volunteer writers for NSS publications and campus outreach.",
-      "Promoted from Content Writer (Sep 2025); drafts newsletters, event announcements and social content.",
+      "Writes event reports and social media content for NSS activities. Promoted from Content Writer in Sep 2025.",
     ],
   },
 ];

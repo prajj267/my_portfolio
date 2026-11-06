@@ -7,6 +7,7 @@ import TacticsBoard from "./components/TacticsBoard";
 import ScrollSpy from "./components/ScrollSpy";
 import Icon from "./components/Icon";
 import BrailleCells from "./components/BrailleCells";
+import LedBoard from "./components/LedBoard";
 import {
   profile,
   stats,
@@ -38,8 +39,14 @@ export default function Home() {
       <main id="top">
         {/* ── HERO ─────────────────────────────── */}
         <section className="hero">
-          <div className="hero-number" aria-hidden="true">{profile.number}</div>
-          <div className="hero-stripes" aria-hidden="true" />
+          <svg className="hero-chalk" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <line x1="1040" y1="-10" x2="1040" y2="910" />
+            <circle cx="1040" cy="470" r="210" />
+            <circle className="spot" cx="1040" cy="470" r="6" />
+            <path d="M 0 880 H 1440" />
+            <path d="M 0 250 H 170 V 690 H 0" />
+            <path d="M 170 380 A 110 110 0 0 1 170 560" />
+          </svg>
 
           <div className="hero-inner">
             <div className="hero-text">
@@ -171,6 +178,14 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── PITCH-SIDE LED BOARD ─────────────────── */}
+        <LedBoard
+          rows={[
+            ["Open to internships", "Full stack developer", "Next.js", "TypeScript", "PostgreSQL", "FastAPI", "React"],
+            ["UAV swarm research", "IIT Patna", "KIIT CSE", "ICDCIT hackathon winner", "florawish.in is live", "3 manuscripts"],
+          ]}
+        />
+
         {/* ── TACTICS / RESEARCH ─────────────────── */}
         <section className="section">
           <SectionHead id="tactics" kicker="Research · IIT Patna" title="The Tactics Board" />
@@ -240,22 +255,41 @@ export default function Home() {
         {/* ── CAPTAINCY ─────────────────────────── */}
         <section className="section">
           <SectionHead id="captaincy" kicker="Leadership & Honours" title="The Armband" />
-          <div className="armband">
-            {captaincy.map((c) => (
-              <div className="honour reveal" key={c.title}>
-                <span className="c-mark">C</span>
-                <div>
-                  <h3>{c.title}</h3>
-                  <p>{c.org} · {c.detail}</p>
-                </div>
-              </div>
-            ))}
+          <div className="armband reveal">
+            <figure className="armband-photo">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/photos/stage.webp"
+                alt="Prajjwal speaking on stage with a microphone at an NSS KIIT event"
+                width={1200}
+                height={800}
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>On stage at an NSS KIIT event</figcaption>
+            </figure>
+            <ul className="honours">
+              {captaincy.map((c) => (
+                <li className="honour" key={c.title}>
+                  <span className="c-mark" aria-hidden="true">C</span>
+                  <div>
+                    <h3>{c.title}</h3>
+                    <p>{c.org}, {c.detail}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
         {/* ── CONTACT ─────────────────────────── */}
         <section className="contact" id="contact">
           <div className="contact-inner reveal">
+            <figure className="contact-photo">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/photos/portrait.webp" alt="Prajjwal Patel in a navy check blazer" width={600} height={900} loading="lazy" decoding="async" />
+            </figure>
+            <div className="contact-copy">
             <span className="kicker kicker-light">Transfer window open</span>
             <h2>Sign the player.</h2>
             <p>Open to internships in full stack development and AI/ML research.</p>
@@ -268,6 +302,7 @@ export default function Home() {
             <div className="contact-resumes">
               <a href={profile.resumeTech} target="_blank" rel="noopener"><Icon name="download" size={16} /> Tech resume</a>
               <a href={profile.resumeResearch} target="_blank" rel="noopener"><Icon name="download" size={16} /> Research resume</a>
+            </div>
             </div>
           </div>
         </section>
