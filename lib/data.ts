@@ -51,7 +51,7 @@ export const career = [
     tag: "Captain",
     points: [
       "Leads a team of volunteer writers for NSS publications and campus outreach.",
-      "Writes event reports and social media content for NSS activities. Promoted from Content Writer in Sep 2025.",
+      "Writes event reports and social media content for NSS activities. Joined as a Content Writer and volunteer in Sep 2025.",
     ],
   },
   {
@@ -164,7 +164,7 @@ export const bench = ["Git", "GitHub", "Vercel", "VS Code"];
 
 export const captaincy = [
   { title: "Content Writing Lead", org: "NSS, KIIT", detail: "Apr 2026 – Present" },
-  { title: "Entrepreneurship Domain Lead", org: "E Labs", detail: "Domain lead" },
-  { title: "Drafting Lead & Anchor", org: "KYMIC", detail: "Drafting & stage" },
+  { title: "Entrepreneurship Domain Lead", org: "E Labs", detail: "Feb 2026 – Present" },
+  { title: "Drafting Lead & Anchor", org: "KYMIC, KIIT SCE", detail: "Anchor since Jan 2026, Drafting Lead since Jun 2026" },
   { title: "ICDCIT Hackathon Winner", org: "BrailleWise", detail: "2025" },
 ];
