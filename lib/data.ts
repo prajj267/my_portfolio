@@ -33,17 +33,6 @@ export const stats = [
 // Oldest first; the page reverses it so the most recent role leads.
 export const career = [
   {
-    club: "KIIT Saathi",
-    role: "Web Developer",
-    period: "Oct 2025 – Mar 2026",
-    place: "Bhubaneswar, Odisha",
-    tag: "Squad member",
-    points: [
-      "Built a campus map feature and shipped student facility-access features in Node.js for KIIT's student platform.",
-      "Led UI/UX improvements across the platform.",
-    ],
-  },
-  {
     club: "IIT Patna",
     role: "Research & Full Stack Development Intern",
     period: "May 2026 – Jul 2026",
@@ -63,6 +52,17 @@ export const career = [
     points: [
       "Leads a team of volunteer writers for NSS publications and campus outreach.",
       "Writes event reports and social media content for NSS activities. Promoted from Content Writer in Sep 2025.",
+    ],
+  },
+  {
+    club: "FloraWish",
+    role: "Web Developer",
+    period: "May 2026 – Present",
+    place: "Client project",
+    tag: "Free agent",
+    points: [
+      "Built and deployed florawish.in, a live e-commerce store for a small business selling handmade bouquets and crochet gifts.",
+      "Product catalogue on a PostgreSQL data layer with the Next.js App Router and TypeScript; SEO-optimised pages on Vercel with a custom domain.",
     ],
   },
 ];
@@ -85,7 +85,7 @@ export type Highlight = {
 export const highlights: Highlight[] = [
   {
     name: "FloraWish",
-    year: "2025 – now",
+    year: "2026 – now",
     result: "Live, serving a paying client",
     resultKind: "live",
     stack: ["Next.js", "TypeScript", "PostgreSQL", "Vercel"],
